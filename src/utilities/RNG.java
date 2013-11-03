@@ -20,8 +20,8 @@ package utilities;
 
 public class RNG {
 	private int seed=0;
-	public int a = 99999989;
-	public int c = 444444443;
+	public int a = 999999937;
+	public int c = 999416681;
 	public int max = Integer.MAX_VALUE;
 	
 	public RNG (int seed){
@@ -45,6 +45,11 @@ public class RNG {
 			n*=-1;
 		}
 		return n;
+	}
+	
+	public int ra(){
+		this.nextSeed();
+		return this.seed;
 	}
 	
 	/**
@@ -90,5 +95,15 @@ public class RNG {
 			else c++;
 		}
 		System.out.printf("%d %d\n", b,c);
+		int s=547736;
+		RNG d = new RNG(s);
+		RNG e = new RNG(s+1);
+		System.out.println("######");
+		for(int i=0; i<10; i++){
+			System.out.println(d.rand());
+			
+			System.out.println(e.rand());
+			System.out.println("#");
+		}
 	}
 }
