@@ -72,38 +72,5 @@ public class RNG {
 		return (int)Math.round(this.randd(start-0.5, end+0.5)); 
 	}
 	
-	/**
-	 * For testing purposes
-	 * @param args
-	 */
-	public static void main(String[] args){
-		RNG a = new RNG(30);
-		int b=0;
-		int c=0;
-		for(int i=0; i<100000; i++){
-			double n = a.rand();
-			if(n<0.25) b++;
-			else c++;
-			
-		}
-		System.out.printf("%d %d\n", b,c);
-		b=0;
-		c=0;
-		for(int i=0; i<100000; i++){
-			int n2= a.randi(0,2);
-			if(n2==1) b++;
-			else c++;
-		}
-		System.out.printf("%d %d\n", b,c);
-		int s=547736;
-		RNG d = new RNG(s);
-		RNG e = new RNG(s+1);
-		System.out.println("######");
-		for(int i=0; i<10; i++){
-			System.out.println(d.rand());
-			
-			System.out.println(e.rand());
-			System.out.println("#");
-		}
-	}
+
 }
