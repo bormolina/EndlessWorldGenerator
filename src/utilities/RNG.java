@@ -47,7 +47,11 @@ public class RNG {
 		return n;
 	}
 	
-	public int ra(){
+	/**
+	 * Generates a random number between Integer.MIN_VALUE and Integer.MAX_VALUE
+	 * @return
+	 */
+	public int randi(){
 		this.nextSeed();
 		return this.seed;
 	}
