@@ -15,7 +15,7 @@ package utilities;
  * This class is independent of the standard class used by java for generate random numbers.
  * It's based on linear congruential generator for more info visit http://en.wikipedia.org/wiki/Linear_congruential_generator
  * @author Borja Molina Zea
- * v0.0 
+ * v0.1
  */
 
 public class RNG {
