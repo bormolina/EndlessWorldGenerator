@@ -1,9 +1,6 @@
 package test;
 import java.util.Arrays;
 import java.util.Collection;
- 
-
-
 
 import org.junit.After;
 import org.junit.Before;
@@ -18,7 +15,7 @@ public class TestRNG {
  
 	 private int seed;
 	 private utilities.RNG rn;
-	 private int iters = 100 * 100;
+	 private int iters = 1000 * 1000;
 	  
 	 public TestRNG(int seed, int n2) {
 	    this.seed = seed;
@@ -74,13 +71,13 @@ public class TestRNG {
 	 public void randi(){
 		 System.out.println("Test randi");
 		 int sum=0;
-		 int inicio = -1;
-		 int fin = 1;
+		 int inicio = 1;
+		 int fin = 10;
 		 int tam = fin-inicio+1;
-		 int ele = 1;
+		 int ele = 3;
 		 for(int i=0;i<this.iters;i++){
 			double n = this.rn.randi(inicio,fin);
-			if(n==0){
+			if(n==ele){
 				sum++;
 			} 
 		 }

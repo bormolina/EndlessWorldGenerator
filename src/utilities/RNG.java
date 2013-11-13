@@ -23,6 +23,7 @@ public class RNG {
 	public int a = 999999937;
 	public int c = 999416681;
 	public int max = Integer.MAX_VALUE;
+	public int min = Integer.MIN_VALUE;
 	
 	public RNG (int seed){
 		this.seed = seed;
@@ -40,9 +41,12 @@ public class RNG {
 	 */
 	public double rand(){
 		this.nextSeed();
-		double n = (double)this.seed/this.max;
-		if(n<0){
-			n*=-1;
+		double n =(double)this.seed;
+		if(n>0){
+			n/=this.max;
+		}
+		else{
+			n/=this.min;
 		}
 		return n;
 	}
