@@ -37,10 +37,18 @@ public class GlobalSeed {
 	public GlobalSeed(String seed){
 		this.sSeed = seed;
 		this.nSeed = this.generateNumberSeed();
+		this.generateNumberSeed();
 	}
 	
 	private int generateNumberSeed(){
 		return this.sSeed.hashCode();
+	}
+	
+	private void generateSeeds(){
+		utilities.RNG nRand = new utilities.RNG(this.nSeed);
+		for(int i=0; i<this.size; i++){
+			this.seeds[i] = nRand.randi();
+		}
 	}
 	
 	public int getGlobal(int index){
@@ -69,5 +77,10 @@ public class GlobalSeed {
 		index%=this.zPhaseSize;
 		index+=this.zPhaseIndex;
 		return this.seeds[index];
+	}
+	
+	public static void main(String[] args){
+		GlobalSeed a = new GlobalSeed("hola");
+		
 	}
 }
