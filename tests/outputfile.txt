@@ -1,2 +1,3 @@
 Semillas numericas para semilla: ana
 pos=154688 seed=-387
+-2.506385242941724

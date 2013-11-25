@@ -25,9 +25,9 @@ public class GlobalSeed {
 	public int size = 262144;
 	public int amplitudeIndex = 0;
 	public int amplitudeSize = 128;
-	public int frecuencyIndex = amplitudeIndex + amplitudeSize;
-	public int frecuencySize = 128;
-	public int xPhaseIndex = frecuencyIndex + frecuencySize;
+	public int periodIndex = amplitudeIndex + amplitudeSize;
+	public int periodSize = 128;
+	public int xPhaseIndex = periodIndex + periodSize;
 	public int xPasheSize = 128;
 	public int zPhaseIndex = xPhaseIndex + xPasheSize;
 	public int zPhaseSize = 128;
@@ -62,9 +62,9 @@ public class GlobalSeed {
 		return this.seeds[index];
 	}
 	
-	public int getFrecuency(int index){
-		index%=this.frecuencySize;
-		index+=this.frecuencyIndex;
+	public int getPeriod(int index){
+		index%=this.periodSize;
+		index+=this.periodIndex;
 		return this.seeds[index];
 	}
 
@@ -89,5 +89,6 @@ public class GlobalSeed {
 			System.out.println("pos="+i+" seed="+a.getGlobal(i));
 			}
 		}
+		System.out.println(5*Math.sin(((1.0/3)*2+3)));
 	}
 }
