@@ -38,6 +38,7 @@ public class GlobalSeed {
 		this.sSeed = seed;
 		this.nSeed = this.generateNumberSeed();
 		this.generateNumberSeed();
+		this.generateSeeds();
 	}
 	
 	private int generateNumberSeed(){
@@ -68,8 +69,8 @@ public class GlobalSeed {
 	}
 
 	public int xPhase(int index){
-		index%=this.frecuencySize;
-		index+=this.frecuencyIndex;
+		index%=this.xPasheSize;
+		index+=this.xPhaseIndex;
 		return this.seeds[index];
 	}
 	
@@ -80,7 +81,13 @@ public class GlobalSeed {
 	}
 	
 	public static void main(String[] args){
-		GlobalSeed a = new GlobalSeed("hola");
-		
+		String seed = "ana";
+		GlobalSeed a = new GlobalSeed(seed);
+		System.out.println("Semillas numericas para semilla: "+seed);
+		for(int i=0; i<a.size; i++){
+			if(a.getGlobal(i)<10000 && a.getGlobal(i)>-10000){
+			System.out.println("pos="+i+" seed="+a.getGlobal(i));
+			}
+		}
 	}
 }
