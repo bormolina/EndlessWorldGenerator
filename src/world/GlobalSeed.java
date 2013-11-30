@@ -68,13 +68,13 @@ public class GlobalSeed {
 		return this.seeds[index];
 	}
 
-	public int xPhase(int index){
+	public int getxPhase(int index){
 		index%=this.xPasheSize;
 		index+=this.xPhaseIndex;
 		return this.seeds[index];
 	}
 	
-	public int zPhase(int index){
+	public int getzPhase(int index){
 		index%=this.zPhaseSize;
 		index+=this.zPhaseIndex;
 		return this.seeds[index];

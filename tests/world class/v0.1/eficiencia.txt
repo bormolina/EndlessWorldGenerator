@@ -1,0 +1,8 @@
+Semilla = 'moon'
+Rango = x=[-500,500], z=[-500,500], tam total = 1kk
+Tiempo que se tarda en calcular la altura para el millón de puntos según el número de componentes en la sumatoria
+1 componente = 0.462094 s
+2 componentes = 0.878195 s
+5 componentes = 2.319204 s
+10 componentes = 4.570387 s
+20 componentes = 9.093994 s
