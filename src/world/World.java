@@ -70,7 +70,36 @@ public class World {
 		return (phase%this.maxPhase);
 	}
 	
-	public double getElevation(int x, int z, int numSums){
+	/**
+	 * 	ESTA FUNCION LA QUIERO SEPARAR, CREAR UNA SUBFUNCION QUE SEA
+	 * GETELEVATION(X,Z, INT I) que coja la elevación de x,z en la dimensión y
+	 */
+	public double getElevation(int x, int z, int i){
+		double value = 0;
+		double amplitude=0;
+		double period=0;
+		//for(int i=0; i<numSums;i++){
+			amplitude = this.getAmplitude(i);
+			period = this.getPeriod(i);
+			//this.writer.printf("%.2f ", period);
+			double xPhase = this.getxPhase(i);
+			double zPhase = this.getzPhase(i);
+			double xValue = utilities.PeriodicFunction.periodicSinusWave(amplitude, period, xPhase, x);
+			double zValue = utilities.PeriodicFunction.periodicSinusWave(amplitude, period, zPhase, z);
+			value += xValue + zValue;
+			//this.writer.printf("%.2f ", value);
+		//}
+		return value;
+	}
+	
+	/**
+	 * 
+	 * @param x
+	 * @param z
+	 * @param numSums
+	 * @return
+	 */
+	public double getWorldElevation(int x, int z, int numSums){
 		double value = 0;
 		double amplitude=0;
 		double period=0;
@@ -122,7 +151,7 @@ public class World {
 		//tierra.testValues(20);
 		for(int x=-500; x<500; x++){
 			for(int z=-500; z<500; z++){
-				double h = tierra.getElevation(x, z, 20);
+				double h = tierra.getWorldElevation(x, z, 5);
 				tierra.writer.printf("%.2f ", h);
 			}
 			tierra.writer.println();
