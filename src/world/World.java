@@ -32,10 +32,12 @@ public class World {
 	public double maxPhase =2*Math.PI*maxPeriod;
 	PrintWriter writer;
 	
-	public World(String seed) throws FileNotFoundException, UnsupportedEncodingException{
+	public World(String seed, int minPeriod, int maxPeriod) {
 		this.seed = seed;
 		this.seeds = new GlobalSeed(this.seed);
-		this.writer = new PrintWriter("C:\\Users\\bor\\eclipse\\workspace\\EndlessWorldCreator\\tests\\outputfile.txt", "UTF-8");
+		this.minPeriod = minPeriod;
+		this.maxPeriod = maxPeriod;
+		//this.writer = new PrintWriter("C:\\Users\\bor\\eclipse\\workspace\\EndlessWorldCreator\\tests\\outputfile.txt", "UTF-8");
 	}
 	
 	public double getPeriod(int index){
@@ -144,7 +146,7 @@ public class World {
 		}
 	}
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException{
-		World tierra = new World("moon");
+		World tierra = new World("moon",100,10000);
 		System.out.printf("Comienzo\n");
 		Chrono c = new Chrono();
 		c.start();
@@ -154,9 +156,9 @@ public class World {
 				double h = tierra.getWorldElevation(x, z, 5);
 				tierra.writer.printf("%.2f ", h);
 			}
-			tierra.writer.println();
+			//tierra.writer.println();
 		}
-		tierra.writer.close();
+		//tierra.writer.close();
 		double t = c.stop();
 		System.out.printf("He acabado en %f segundos",t);
 	}

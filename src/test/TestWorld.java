@@ -16,7 +16,7 @@ public class TestWorld {
 	int nSums;
 	
 	public TestWorld() throws FileNotFoundException, UnsupportedEncodingException{
-		this.earth = new World("sun");
+		this.earth = new World("sun",100,10000);
 		this.nSums = 40;
 	}
 	
