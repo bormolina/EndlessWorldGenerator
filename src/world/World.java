@@ -120,7 +120,7 @@ public class World {
 	}
 	
 	public void testValues(int numSums){
-		double value = 0;
+		double value = 1;
 		double amplitude=0;
 		double period=0;
 		this.writer.printf("Resultados para la semilla '%s'\n",this.seed);
